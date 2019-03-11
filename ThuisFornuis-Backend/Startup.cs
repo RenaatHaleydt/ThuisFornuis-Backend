@@ -26,6 +26,7 @@ namespace ThuisFornuis_Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddOpenApiDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +35,7 @@ namespace ThuisFornuis_Backend
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
@@ -43,6 +45,8 @@ namespace ThuisFornuis_Backend
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwaggerUi3();
+            app.UseSwagger(); //in this sequence
         }
     }
 }
