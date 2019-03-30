@@ -60,23 +60,23 @@ namespace ThuisFornuis_Backend
 
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
 
-            services.AddAuthentication(x => {
-                x.DefaultAuthenticateScheme =
-              JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(x => {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(Configuration["Tokens:Key"])),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    RequireExpirationTime = true //Ensure token hasn't expired
-                };
-            });
+            //services.AddAuthentication(x => {
+            //    x.DefaultAuthenticateScheme =
+            //  JwtBearerDefaults.AuthenticationScheme;
+            //})
+            //.AddJwtBearer(x => {
+            //    x.RequireHttpsMetadata = false;
+            //    x.SaveToken = true;
+            //    x.TokenValidationParameters = new TokenValidationParameters
+            //    {
+            //        ValidateIssuerSigningKey = true,
+            //        IssuerSigningKey = new SymmetricSecurityKey(
+            //    Encoding.UTF8.GetBytes(Configuration["Tokens:Key"])),
+            //        ValidateIssuer = false,
+            //        ValidateAudience = false,
+            //        RequireExpirationTime = true //Ensure token hasn't expired
+            //    };
+            //});
         }
 
 
@@ -108,7 +108,7 @@ namespace ThuisFornuis_Backend
             menusDataInitializer.InitializeData(); //.Wait();
 
             app.UseCors("AllowAllOrigins");
-            app.UseAuthentication();
+            //app.UseAuthentication();
         }
     }
 }

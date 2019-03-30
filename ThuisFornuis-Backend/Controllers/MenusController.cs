@@ -7,6 +7,8 @@ using ThuisFornuis_Backend.Models;
 
 namespace ThuisFornuis_Backend.Controllers
 {
+    [ApiConventionType(typeof(DefaultApiConventions))]
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class MenusController : ControllerBase

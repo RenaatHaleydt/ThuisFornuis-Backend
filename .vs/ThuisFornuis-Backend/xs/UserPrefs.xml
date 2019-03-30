@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{B3F36BE3-CB1D-4337-B3A3-0F2363E2D3F1}|Default">
   <MonoDevelop.Ide.ItemProperties.ThuisFornuis-Backend PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThuisFornuis-Backend/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThuisFornuis-Backend/Controllers/MenusController.cs">
     <Files>
-      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="22" Column="44" />
-      <File FileName="ThuisFornuis-Backend/Startup.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Data/MenusDataInitializer.cs" Line="4" Column="18" />
-      <File FileName="ThuisFornuis-Backend/Program.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="1" Column="1" />
+      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="12" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Startup.cs" Line="33" Column="9" />
+      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="11" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ThuisFornuis-Backend" expanded="True">
-            <Node name="ThuisFornuis-Backend" expanded="True" selected="True">
-              <Node name="Controllers" expanded="True" />
+            <Node name="ThuisFornuis-Backend" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="MenusController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True">
                 <Node name="Repositories" expanded="True" />
               </Node>
