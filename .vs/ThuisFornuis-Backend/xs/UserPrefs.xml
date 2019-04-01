@@ -2,9 +2,10 @@
   <MonoDevelop.Ide.ItemProperties.ThuisFornuis-Backend PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ThuisFornuis-Backend/Controllers/MenusController.cs">
     <Files>
-      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="12" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Startup.cs" Line="33" Column="9" />
-      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="11" Column="35" />
+      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="165" Column="10" />
+      <File FileName="ThuisFornuis-Backend/Data/Repositories/MenusRepository.cs" Line="28" Column="1" />
+      <File FileName="ThuisFornuis-Backend/DTOs/MenuDTO.cs" Line="9" Column="63" />
+      <File FileName="ThuisFornuis-Backend/Models/Menu.cs" Line="87" Column="57" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,6 +18,7 @@
               <Node name="Data" expanded="True">
                 <Node name="Repositories" expanded="True" />
               </Node>
+              <Node name="DTOs" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>

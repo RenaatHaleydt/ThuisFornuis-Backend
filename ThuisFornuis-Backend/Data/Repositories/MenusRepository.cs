@@ -22,6 +22,7 @@ namespace ThuisFornuis_Backend.Data.Repositories
                     .Include(m => m.Gerechten)
                     .Include(m => m.Desserts)
                     .Include(m => m.Soepen)
+                    .OrderBy(m => m.Datum)
                     .ToList();
         }
 

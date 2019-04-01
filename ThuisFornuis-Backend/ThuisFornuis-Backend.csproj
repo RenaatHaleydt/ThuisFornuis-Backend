@@ -16,5 +16,9 @@
 
   <ItemGroup>
     <Folder Include="Data\Repositories\" />
+    <Folder Include="DTOs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
   </ItemGroup>
 </Project>

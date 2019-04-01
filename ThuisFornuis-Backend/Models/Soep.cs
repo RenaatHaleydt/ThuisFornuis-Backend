@@ -15,18 +15,20 @@ namespace ThuisFornuis_Backend.Models {
         [Required]
         public double Prijs { get; set; }
 
+        [Required]
         public double Hoeveelheid { get; set; }
 
         public string Omschrijving { get; set; }
 
         public string Foto { get; set; }
 
-        public Soep(string naam, double prijs, double hoeveelheid, string omschrijving = null, string foto = null) {
+        public Soep(string naam, double prijs, double hoeveelheid, string omschrijving, string foto)
+        {
             Naam = naam;
             Prijs = prijs;
             Hoeveelheid = hoeveelheid;
-            Omschrijving = omschrijving;
-            Foto = foto;
+            Omschrijving = omschrijving == "" ? null : omschrijving;
+            Foto = foto == "" ? null : foto;
         }
     }
 }
