@@ -8,12 +8,5 @@ namespace ThuisFornuis_Backend.Models
         public int DessertId { get; set; }
         public Dessert Dessert { get; set; }
         public DateTime Datum { get; set; }
-
-        public MenuDessert(Menu menu, Dessert dessert, DateTime datum)
-        {
-            this.Menu = menu;
-            this.Dessert = dessert;
-            this.Datum = datum;
-        }
     }
 }

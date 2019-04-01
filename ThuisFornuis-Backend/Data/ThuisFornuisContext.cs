@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using ThuisFornuis_Backend.Models;
+using ThuisFornuis_Backend.Models.Mappers;
 
 namespace ThuisFornuis_Backend.Data
 {
@@ -16,52 +17,14 @@ namespace ThuisFornuis_Backend.Data
 
             //Hier mappen we de dingen!!!!!!
             base.OnModelCreating(modelBuilder);
-            
-            //Menu
-            //modelBuilder.Entity<Menu>()
-                //.HasMany(p => p.Gerechten)
-                //.WithOne()
-                //.IsRequired()
-                //.HasForeignKey("MenuId"); //Shadow property
-            modelBuilder.Entity<Menu>()
-                .HasMany(m => m.Soepen)
-                .WithOne()
-                .IsRequired()
-                .HasForeignKey("MenuId");
-            modelBuilder.Entity<Menu>()
-                .HasMany(m => m.Desserts)
-                .WithOne()
-                .IsRequired()
-                .HasForeignKey("MenuId");
-            modelBuilder.Entity<Menu>().Property(m => m.Datum).IsRequired();
-            modelBuilder.Entity<Menu>().Property(m => m.Omschrijving).HasMaxLength(150);
-            modelBuilder.Entity<Menu>().Ignore(m => m.Gerechten);
 
-            modelBuilder.Entity<MenuGerecht>().HasKey(mg => new { mg.MenuId, mg.GerechtId });
-            modelBuilder.Entity<MenuGerecht>().HasOne(mg => mg.Menu).WithMany(m => m.MenuGerechten).HasForeignKey(mg => mg.MenuId);
-            modelBuilder.Entity<MenuGerecht>().HasOne(mg => mg.Gerecht).WithMany().HasForeignKey(mg => mg.GerechtId);
-
-            //Gerecht
-            modelBuilder.Entity<Gerecht>().Property(g => g.Naam).IsRequired().HasMaxLength(100);
-            modelBuilder.Entity<Gerecht>().Property(g => g.Prijs).IsRequired();
-            modelBuilder.Entity<Gerecht>().Property(g => g.Hoeveelheid).IsRequired();
-            modelBuilder.Entity<Gerecht>().Property(g => g.Omschrijving).HasMaxLength(150);
-            modelBuilder.Entity<Gerecht>().Property(g => g.Foto).HasMaxLength(100);
-
-            //Soep
-            modelBuilder.Entity<Soep>().Property(g => g.Naam).IsRequired().HasMaxLength(100);
-            modelBuilder.Entity<Soep>().Property(g => g.Prijs).IsRequired();
-            modelBuilder.Entity<Soep>().Property(g => g.Hoeveelheid).IsRequired();
-            modelBuilder.Entity<Soep>().Property(g => g.Omschrijving).HasMaxLength(150);
-            modelBuilder.Entity<Soep>().Property(g => g.Foto).HasMaxLength(100);
-
-            //Dessert
-            modelBuilder.Entity<Dessert>().Property(g => g.Naam).IsRequired().HasMaxLength(100);
-            modelBuilder.Entity<Dessert>().Property(g => g.Prijs).IsRequired();
-            modelBuilder.Entity<Dessert>().Property(g => g.Hoeveelheid).IsRequired();
-            modelBuilder.Entity<Dessert>().Property(g => g.Omschrijving).HasMaxLength(150);
-            modelBuilder.Entity<Dessert>().Property(g => g.Foto).HasMaxLength(100);
-
+            modelBuilder.ApplyConfiguration(new MenuConfiguration());
+            modelBuilder.ApplyConfiguration(new MenuGerechtConfiguration());
+            modelBuilder.ApplyConfiguration(new MenuSoepConfiguration());
+            modelBuilder.ApplyConfiguration(new MenuDessertConfiguration());
+            modelBuilder.ApplyConfiguration(new GerechtConfiguration());
+            modelBuilder.ApplyConfiguration(new SoepConfiguration());
+            modelBuilder.ApplyConfiguration(new DessertConfiguration());
 
             //Another way to seed the database
             modelBuilder.Entity<Menu>().HasData(
@@ -81,15 +44,15 @@ namespace ThuisFornuis_Backend.Data
             );
 
             modelBuilder.Entity<Soep>().HasData(
-                new { Id = 1, Naam = "Groentensoep", Prijs = (double)2, Hoeveelheid = (double)0.5, MenuId = 1 },
-                new { Id = 2, Naam = "Tomatensoep met balletjes", Prijs = (double)2.5, Hoeveelheid = (double)0.5, MenuId = 2 },
-                new { Id = 3, Naam = "Gebraden paprikasoep", Prijs = (double)1.5, Hoeveelheid = (double)0.5, MenuId = 3 }
+                new { Id = 1, Naam = "Groentensoep", Prijs = (double)2, Hoeveelheid = (double)0.5 },
+                new { Id = 2, Naam = "Tomatensoep met balletjes", Prijs = (double)2.5, Hoeveelheid = (double)0.5 },
+                new { Id = 3, Naam = "Gebraden paprikasoep", Prijs = (double)1.5, Hoeveelheid = (double)0.5 }
             );
 
             modelBuilder.Entity<Dessert>().HasData(
-                new { Id = 1, Naam = "Chocomousse", Prijs = (double)2, Hoeveelheid = (double)1, MenuId = 1 },
-                new { Id = 2, Naam = "Potje panna cotta met chocolade", Prijs = (double)1.5, Hoeveelheid = (double)1, MenuId = 2 },
-                new { Id = 3, Naam = "Appeltaart met kaneel", Prijs = (double)2, Hoeveelheid = (double)1, MenuId = 3 }
+                new { Id = 1, Naam = "Chocomousse", Prijs = (double)2, Hoeveelheid = (double)1 },
+                new { Id = 2, Naam = "Potje panna cotta met chocolade", Prijs = (double)1.5, Hoeveelheid = (double)1 },
+                new { Id = 3, Naam = "Appeltaart met kaneel", Prijs = (double)2, Hoeveelheid = (double)1 }
             );
         }
 

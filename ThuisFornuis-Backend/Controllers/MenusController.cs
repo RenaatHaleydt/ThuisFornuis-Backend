@@ -23,47 +23,46 @@ namespace ThuisFornuis_Backend.Controllers
 
         //----------------------------Menus----------------------------
         [HttpGet]
-        public IEnumerable<Menu> GetMenus()
+        public IEnumerable<MenuDTO> GetMenus()
         { 
-            var menus = _menusRepository.GetAll();
-            return menus;
+            return _menusRepository.GetAll().Select(m => MenuDTO.MapMenu(m)).ToList();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Menu> GetMenu(int id)
+        public ActionResult<MenuDTO> GetMenu(int id)
         {
             var menu = _menusRepository.GetBy(id);
             if (menu == null)
             {
                 return NotFound();
             }
-            return menu;
+            return MenuDTO.MapMenu(menu);
         }
 
-        [HttpPost]
-        public ActionResult<Menu> PostMenu(MenuDTO menu)
-        {
-            Menu menuToCreate = new Menu(menu.Datum, menu.Omschrijving);
-            if (menu.Gerechten != null)
-            {
-                foreach (var gerecht in menu.Gerechten)
-                    menuToCreate.AddGerecht(new Gerecht(gerecht.Naam, gerecht.Prijs, gerecht.Hoeveelheid, gerecht.Omschrijving, gerecht.Foto));
-            }
-            if (menu.Soepen != null)
-            {
-                foreach (var soep in menu.Soepen)
-                    menuToCreate.AddSoep(new Soep(soep.Naam, soep.Prijs, soep.Hoeveelheid, soep.Omschrijving, soep.Foto));
-            }
-            if(menu.Desserts != null)
-            {
-                foreach (var dessert in menu.Desserts)
-                    menuToCreate.AddDessert(new Dessert(dessert.Naam, dessert.Prijs, dessert.Hoeveelheid, dessert.Omschrijving, dessert.Foto));
-            }
-            _menusRepository.Add(menuToCreate);
-            _menusRepository.SaveChanges();
-            //201 + link naar gecreeerd menu + optioneel het gecreerde menu
-            return CreatedAtAction(nameof(GetMenu), new { id = menuToCreate.Id }, menuToCreate);
-        }
+        //[HttpPost]
+        //public ActionResult<MenuDTO> PostMenu(MenuDTO menu)
+        //{
+        //    Menu menuToCreate = new Menu(menu.Datum, menu.Omschrijving);
+        //    if (menu.Gerechten != null)
+        //    {
+        //        foreach (var gerecht in menu.Gerechten)
+        //            menuToCreate.AddGerecht(new Gerecht(gerecht.Naam, gerecht.Prijs, gerecht.Hoeveelheid, gerecht.Omschrijving, gerecht.Foto));
+        //    }
+        //    if (menu.Soepen != null)
+        //    {
+        //        foreach (var soep in menu.Soepen)
+        //            menuToCreate.AddSoep(new Soep(soep.Naam, soep.Prijs, soep.Hoeveelheid, soep.Omschrijving, soep.Foto));
+        //    }
+        //    if(menu.Desserts != null)
+        //    {
+        //        foreach (var dessert in menu.Desserts)
+        //            menuToCreate.AddDessert(new Dessert(dessert.Naam, dessert.Prijs, dessert.Hoeveelheid, dessert.Omschrijving, dessert.Foto));
+        //    }
+        //    _menusRepository.Add(menuToCreate);
+        //    _menusRepository.SaveChanges();
+        //    //201 + link naar gecreeerd menu + optioneel het gecreerde menu
+        //    return CreatedAtAction(nameof(GetMenu), new { id = menuToCreate.Id }, menuToCreate);
+        //}
 
         [HttpPut("{id}")]
         public IActionResult PutMenu(int id, Menu menu)
@@ -114,18 +113,18 @@ namespace ThuisFornuis_Backend.Controllers
             return gerecht;
         }
 
-        [HttpPost("{id}/gerechten")]
-        public ActionResult<Gerecht> PostGerecht(int id, GerechtDTO gerecht)
-        {
-            if (!_menusRepository.TryGetMenu(id, out var menu))
-            {
-                return NotFound();
-            }
-            var gerechtToCreate = new Gerecht(gerecht.Naam, gerecht.Prijs, gerecht.Hoeveelheid, gerecht.Omschrijving, gerecht.Foto);
-            menu.AddGerecht(gerechtToCreate);
-            _menusRepository.SaveChanges();
-            return CreatedAtAction("GetGerecht", new { id = menu.Id, gerechtId = gerechtToCreate.Id }, gerechtToCreate);
-        }
+        //[HttpPost("{id}/gerechten")]
+        //public ActionResult<Gerecht> PostGerecht(int id, GerechtDTO gerecht)
+        //{
+        //    if (!_menusRepository.TryGetMenu(id, out var menu))
+        //    {
+        //        return NotFound();
+        //    }
+        //    var gerechtToCreate = new Gerecht(gerecht.Naam, gerecht.Prijs, gerecht.Hoeveelheid, gerecht.Omschrijving, gerecht.Foto);
+        //    menu.AddGerecht(gerechtToCreate);
+        //    _menusRepository.SaveChanges();
+        //    return CreatedAtAction("GetGerecht", new { id = menu.Id, gerechtId = gerechtToCreate.Id }, gerechtToCreate);
+        //}
 
         [HttpDelete("{id}/gerechten/{gerechtId}")]
         public ActionResult<Gerecht> DeleteGerecht(int id, int gerechtId)
@@ -165,18 +164,18 @@ namespace ThuisFornuis_Backend.Controllers
             return soep;
         }
 
-        [HttpPost("{id}/soepen")]
-        public ActionResult<Soep> PostSoep(int id, SoepDTO soep)
-        {
-            if (!_menusRepository.TryGetMenu(id, out var menu))
-            {
-                return NotFound();
-            }
-            var soepToCreate = new Soep(soep.Naam, soep.Prijs, soep.Hoeveelheid, soep.Omschrijving, soep.Foto);
-            menu.AddSoep(soepToCreate);
-            _menusRepository.SaveChanges();
-            return CreatedAtAction("GetSoep", new { id = menu.Id, soepId = soepToCreate.Id }, soepToCreate);
-        }
+        //[HttpPost("{id}/soepen")]
+        //public ActionResult<Soep> PostSoep(int id, SoepDTO soep)
+        //{
+        //    if (!_menusRepository.TryGetMenu(id, out var menu))
+        //    {
+        //        return NotFound();
+        //    }
+        //    var soepToCreate = new Soep(soep.Naam, soep.Prijs, soep.Hoeveelheid, soep.Omschrijving, soep.Foto);
+        //    menu.AddSoep(soepToCreate);
+        //    _menusRepository.SaveChanges();
+        //    return CreatedAtAction("GetSoep", new { id = menu.Id, soepId = soepToCreate.Id }, soepToCreate);
+        //}
 
         [HttpDelete("{id}/soepen/{soepId}")]
         public ActionResult<Soep> DeleteSoep(int id, int soepId)
@@ -216,18 +215,18 @@ namespace ThuisFornuis_Backend.Controllers
             return dessert;
         }
 
-        [HttpPost("{id}/desserts")]
-        public ActionResult<Dessert> PostDessert(int id, DessertDTO dessert)
-        {
-            if (!_menusRepository.TryGetMenu(id, out var menu))
-            {
-                return NotFound();
-            }
-            var dessertToCreate = new Dessert(dessert.Naam, dessert.Prijs, dessert.Hoeveelheid, dessert.Omschrijving, dessert.Foto);
-            menu.AddDessert(dessertToCreate);
-            _menusRepository.SaveChanges();
-            return CreatedAtAction("GetDessert", new { id = menu.Id, dessertId = dessertToCreate.Id }, dessertToCreate);
-        }
+        //[HttpPost("{id}/desserts")]
+        //public ActionResult<Dessert> PostDessert(int id, DessertDTO dessert)
+        //{
+        //    if (!_menusRepository.TryGetMenu(id, out var menu))
+        //    {
+        //        return NotFound();
+        //    }
+        //    var dessertToCreate = new Dessert(dessert.Naam, dessert.Prijs, dessert.Hoeveelheid, dessert.Omschrijving, dessert.Foto);
+        //    menu.AddDessert(dessertToCreate);
+        //    _menusRepository.SaveChanges();
+        //    return CreatedAtAction("GetDessert", new { id = menu.Id, dessertId = dessertToCreate.Id }, dessertToCreate);
+        //}
 
         [HttpDelete("{id}/desserts/{dessertId}")]
         public ActionResult<Dessert> DeleteDessert(int id, int dessertId)

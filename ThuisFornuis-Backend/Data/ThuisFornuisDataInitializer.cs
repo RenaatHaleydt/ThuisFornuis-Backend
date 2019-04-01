@@ -20,7 +20,8 @@ namespace ThuisFornuis_Backend.Data
             {
                 //seeding the database with menus, see DBContext
                 Menu menu = _dbContext.Menus.Find(1);
-                menu.AddGerecht(new Gerecht("Nieuw gerecht", 3, 4, "", ""));
+                menu.AddGerecht(new Gerecht("Nieuw gerecht", 3, 4, "", ""), DateTime.Now);
+                //menu.AddDessert(_dbContext.Desserts.Find(1), DateTime.Now);
                 _dbContext.SaveChanges();
             }
         }
