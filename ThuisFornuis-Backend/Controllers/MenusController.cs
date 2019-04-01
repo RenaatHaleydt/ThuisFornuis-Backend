@@ -25,7 +25,8 @@ namespace ThuisFornuis_Backend.Controllers
         [HttpGet]
         public IEnumerable<Menu> GetMenus()
         { 
-            return _menusRepository.GetAll();
+            var menus = _menusRepository.GetAll();
+            return menus;
         }
 
         [HttpGet("{id}")]
@@ -99,7 +100,7 @@ namespace ThuisFornuis_Backend.Controllers
                 return new List<Gerecht>();
                 //return NotFound();
             }
-            return menu.Gerechten.OrderBy(g => g.Naam);
+            return menu.MenuGerechten.Select(mg => mg.Gerecht).OrderBy(g => g.Naam);
         }
 
         [HttpGet("{id}/gerechten/{gerechtId}")]

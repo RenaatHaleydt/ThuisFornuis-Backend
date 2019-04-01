@@ -18,11 +18,11 @@ namespace ThuisFornuis_Backend.Data
             base.OnModelCreating(modelBuilder);
             
             //Menu
-            modelBuilder.Entity<Menu>()
-                .HasMany(p => p.Gerechten)
-                .WithOne()
-                .IsRequired()
-                .HasForeignKey("MenuId"); //Shadow property
+            //modelBuilder.Entity<Menu>()
+                //.HasMany(p => p.Gerechten)
+                //.WithOne()
+                //.IsRequired()
+                //.HasForeignKey("MenuId"); //Shadow property
             modelBuilder.Entity<Menu>()
                 .HasMany(m => m.Soepen)
                 .WithOne()
@@ -35,6 +35,11 @@ namespace ThuisFornuis_Backend.Data
                 .HasForeignKey("MenuId");
             modelBuilder.Entity<Menu>().Property(m => m.Datum).IsRequired();
             modelBuilder.Entity<Menu>().Property(m => m.Omschrijving).HasMaxLength(150);
+            modelBuilder.Entity<Menu>().Ignore(m => m.Gerechten);
+
+            modelBuilder.Entity<MenuGerecht>().HasKey(mg => new { mg.MenuId, mg.GerechtId });
+            modelBuilder.Entity<MenuGerecht>().HasOne(mg => mg.Menu).WithMany(m => m.MenuGerechten).HasForeignKey(mg => mg.MenuId);
+            modelBuilder.Entity<MenuGerecht>().HasOne(mg => mg.Gerecht).WithMany().HasForeignKey(mg => mg.GerechtId);
 
             //Gerecht
             modelBuilder.Entity<Gerecht>().Property(g => g.Naam).IsRequired().HasMaxLength(100);
@@ -67,11 +72,11 @@ namespace ThuisFornuis_Backend.Data
 
             modelBuilder.Entity<Gerecht>().HasData(
                 //Shadow property can be used for the foreign key, in combination with anaonymous objects
-                new { Id = 1, Naam = "Spaghetti", Prijs = (double)8.5, Hoeveelheid = (double)1, Omschrijving  = "De lekkerste spaghetti bolognese die je geproefd zal hebben", MenuId = 1 },
-                new { Id = 2, Naam = "Hespenrolletjes met witloof in de kaassaus, samen met puree", Prijs = (double)8.5, Hoeveelheid = (double)1, Omschrijving = "Met verse groenten uit de tuin", MenuId = 1 },
-                new { Id = 3, Naam = "Aardappelschotel met burgers, feta en kerstomaatjes", Prijs = (double)9, Hoeveelheid = (double)1, Omschrijving = "Feest op je bord", MenuId = 1 },
-                new { Id = 4, Naam = "Parelcouscous met kippenfilet, een slaatje met kruidenyoghurtsausje", Prijs = (double)9, Hoeveelheid = (double)1, Omschrijving = "De parelcouscous is een soort pasta", MenuId = 2 },
-                new { Id = 5, Naam = "Wortelpuree met braadworst", Prijs = (double)9, Hoeveelheid = (double)1, Omschrijving = "De famous wortelpuree van KSA Berlare op je bord", MenuId = 2 },
+                new { Id = 1, Naam = "Spaghetti", Prijs = (double)8.5, Hoeveelheid = (double)1, Omschrijving  = "De lekkerste spaghetti bolognese die je geproefd zal hebben" },
+                new { Id = 2, Naam = "Hespenrolletjes met witloof in de kaassaus, samen met puree", Prijs = (double)8.5, Hoeveelheid = (double)1, Omschrijving = "Met verse groenten uit de tuin" },
+                new { Id = 3, Naam = "Aardappelschotel met burgers, feta en kerstomaatjes", Prijs = (double)9, Hoeveelheid = (double)1, Omschrijving = "Feest op je bord" },
+                new { Id = 4, Naam = "Parelcouscous met kippenfilet, een slaatje met kruidenyoghurtsausje", Prijs = (double)9, Hoeveelheid = (double)1, Omschrijving = "De parelcouscous is een soort pasta" },
+                new { Id = 5, Naam = "Wortelpuree met braadworst", Prijs = (double)9, Hoeveelheid = (double)1, Omschrijving = "De famous wortelpuree van KSA Berlare" },
                 new { Id = 6, Naam = "Schelvis met prei en aardappel uit de oven", Prijs = (double)9, Hoeveelheid = (double)1, MenuId = 2 }
             );
 
@@ -89,5 +94,8 @@ namespace ThuisFornuis_Backend.Data
         }
 
         public DbSet<Menu> Menus { get; set; }
+        public DbSet<Gerecht> Gerechten { get; set; }
+        public DbSet<Soep> Soepen { get; set; }
+        public DbSet<Dessert> Desserts { get; set; }
     }
 }

@@ -1,25 +1,27 @@
 ﻿<Properties StartupConfiguration="{B3F36BE3-CB1D-4337-B3A3-0F2363E2D3F1}|Default">
   <MonoDevelop.Ide.ItemProperties.ThuisFornuis-Backend PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThuisFornuis-Backend/Controllers/MenusController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThuisFornuis-Backend/Models/MenuGerecht.cs">
     <Files>
-      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="165" Column="10" />
-      <File FileName="ThuisFornuis-Backend/Data/Repositories/MenusRepository.cs" Line="28" Column="1" />
-      <File FileName="ThuisFornuis-Backend/DTOs/MenuDTO.cs" Line="9" Column="63" />
-      <File FileName="ThuisFornuis-Backend/Models/Menu.cs" Line="87" Column="57" />
+      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisDataInitializer.cs" Line="23" Column="77" />
+      <File FileName="ThuisFornuis-Backend/Models/Menu.cs" Line="20" Column="27" />
+      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="46" Column="29" />
+      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisContext.cs" Line="36" Column="38" />
+      <File FileName="ThuisFornuis-Backend/Data/Repositories/MenusRepository.cs" Line="40" Column="51" />
+      <File FileName="ThuisFornuis-Backend/Models/MenuGerecht.cs" Line="10" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ThuisFornuis-Backend" expanded="True">
             <Node name="ThuisFornuis-Backend" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="MenusController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True">
                 <Node name="Repositories" expanded="True" />
               </Node>
               <Node name="DTOs" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="MenuGerecht.cs" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
             </Node>
           </Node>

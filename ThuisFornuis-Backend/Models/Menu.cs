@@ -16,7 +16,10 @@ namespace ThuisFornuis_Backend.Models
 
         public string Omschrijving { get; set; }
 
-        public ICollection<Gerecht> Gerechten { get; private set; }
+
+        public ICollection<MenuGerecht> MenuGerechten { get; private set; }
+
+        public IEnumerable<Gerecht> Gerechten => MenuGerechten.Select(mg => mg.Gerecht);
 
         public ICollection<Soep> Soepen { get; private set; }
 
@@ -26,7 +29,7 @@ namespace ThuisFornuis_Backend.Models
         #region Constructors
         public Menu()
         {
-            Gerechten = new List<Gerecht>();
+            MenuGerechten = new List<MenuGerecht>();
             Soepen = new List<Soep>();
             Desserts = new List<Dessert>();
         }
@@ -37,11 +40,11 @@ namespace ThuisFornuis_Backend.Models
             Omschrijving = omschrijving;
         }
 
-        public Menu(DateTime datum, string omschrijving, ICollection<Gerecht> gerechten)
+        public Menu(DateTime datum, string omschrijving, ICollection<MenuGerecht> menuGerechten)
         {
             Datum = datum;
             Omschrijving = omschrijving;
-            Gerechten = gerechten;
+            MenuGerechten = menuGerechten;
             Soepen = new List<Soep>();
             Desserts = new List<Dessert>();
         }
@@ -50,7 +53,7 @@ namespace ThuisFornuis_Backend.Models
         {
             Datum = datum;
             Omschrijving = omschrijving;
-            Gerechten = new List<Gerecht>();
+            MenuGerechten = new List<MenuGerecht>();
             Soepen = soepen;
             Desserts = new List<Dessert>();
         }
@@ -59,25 +62,25 @@ namespace ThuisFornuis_Backend.Models
         {
             Datum = datum;
             Omschrijving = omschrijving;
-            Gerechten = new List<Gerecht>();
+            MenuGerechten = new List<MenuGerecht>();
             Soepen = new List<Soep>();
             Desserts = desserts;
         }
 
-        public Menu(DateTime datum, string omschrijving, ICollection<Gerecht> gerechten, ICollection<Soep> soepen, ICollection<Dessert> desserts)
+        public Menu(DateTime datum, string omschrijving, ICollection<MenuGerecht> menuGerechten, ICollection<Soep> soepen, ICollection<Dessert> desserts)
         {
             Datum = datum;
             Omschrijving = omschrijving;
-            Gerechten = gerechten;
+            MenuGerechten = menuGerechten;
             Soepen = soepen;
             Desserts = desserts;
         }
         #endregion
 
         #region Methods
-        public void AddGerecht(Gerecht gerecht) => Gerechten.Add(gerecht);
-        public Gerecht GetGerecht(int id) => Gerechten.SingleOrDefault(g => g.Id == id);
-        public void DeleteGerecht(Gerecht gerecht) => Gerechten.Remove(gerecht);
+        public void AddGerecht(Gerecht gerecht) => MenuGerechten.Add(new MenuGerecht() { MenuId = Id, Menu = this, GerechtId = gerecht.Id, Gerecht = gerecht, Datum = DateTime.Now});
+        public Gerecht GetGerecht(int id) => MenuGerechten.SingleOrDefault(mg => mg.GerechtId == id).Gerecht;
+        public void DeleteGerecht(Gerecht gerecht) => MenuGerechten.Remove(MenuGerechten.SingleOrDefault(mg => mg.GerechtId == gerecht.Id));
 
         public void AddSoep(Soep soep) => Soepen.Add(soep);
         public Soep GetSoep(int id) => Soepen.SingleOrDefault(s => s.Id == id);

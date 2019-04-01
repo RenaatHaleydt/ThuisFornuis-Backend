@@ -19,9 +19,8 @@ namespace ThuisFornuis_Backend.Data.Repositories
         public IEnumerable<Menu> GetAll()
         {
             return _menus
-                    .Include(m => m.Gerechten)
-                    .Include(m => m.Desserts)
-                    .Include(m => m.Soepen)
+                    .Include(m => m.MenuGerechten)
+                    .ThenInclude(mg => mg.Gerecht)
                     .OrderBy(m => m.Datum)
                     .ToList();
         }
@@ -29,18 +28,16 @@ namespace ThuisFornuis_Backend.Data.Repositories
         public Menu GetBy(int id)
         {
             return _menus
-                    .Include(m => m.Gerechten)
-                    .Include(m => m.Desserts)
-                    .Include(m => m.Soepen)
+                    .Include(m => m.MenuGerechten)
+                    .ThenInclude(mg => mg.Gerecht)
                     .SingleOrDefault(r => r.Id == id);
         }
 
         public bool TryGetMenu(int id, out Menu menu)
         {
             menu = _context.Menus
-                    .Include(m => m.Gerechten)
-                    .Include(m => m.Desserts)
-                    .Include(m => m.Soepen)
+                    .Include(m => m.MenuGerechten)
+                    .ThenInclude(mg => mg.Gerecht)
                     .FirstOrDefault(t => t.Id == id);
             return menu != null;
         }

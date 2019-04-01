@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using ThuisFornuis_Backend.Models;
+
 namespace ThuisFornuis_Backend.Data
 {
     public class ThuisFornuisDataInitializer
@@ -15,7 +18,10 @@ namespace ThuisFornuis_Backend.Data
             _dbContext.Database.EnsureDeleted();
             if (_dbContext.Database.EnsureCreated())
             {
-                //seeding the database with menus, see DBContext               
+                //seeding the database with menus, see DBContext
+                Menu menu = _dbContext.Menus.Find(1);
+                menu.AddGerecht(new Gerecht("Nieuw gerecht", 3, 4, "", ""));
+                _dbContext.SaveChanges();
             }
         }
     }
