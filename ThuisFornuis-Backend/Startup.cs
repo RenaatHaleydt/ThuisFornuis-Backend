@@ -19,6 +19,7 @@ using NSwag.SwaggerGeneration.Processors.Security;
 using ThuisFornuis_Backend.Data;
 using ThuisFornuis_Backend.Data.Repositories;
 using ThuisFornuis_Backend.Models;
+using ThuisFornuis_Backend.Models.Domain.IRepositories;
 
 namespace ThuisFornuis_Backend
 {
@@ -41,6 +42,9 @@ namespace ThuisFornuis_Backend
 
             services.AddScoped<ThuisFornuisDataInitializer>();
             services.AddScoped<IMenusRepository, MenuRepository>();
+            services.AddScoped<IGerechtenRepository, GerechtenRepository>();
+            //services.AddScoped<ISoepenRepository, SoepenRepository>();
+            //services.AddScoped<IDessertsRepository, DessertsRepository>();
 
             services.AddOpenApiDocument(c =>
             {

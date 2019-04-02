@@ -20,6 +20,8 @@ namespace ThuisFornuis_Backend.Models
 
         public string Foto { get; set; }
 
+        public Gerecht() { }
+
         public Gerecht(string naam, double prijs, double hoeveelheid, string omschrijving, string foto) {
             Naam = naam;
             Prijs = prijs;
@@ -27,6 +29,5 @@ namespace ThuisFornuis_Backend.Models
             Omschrijving = omschrijving == "" ? null: omschrijving;
             Foto = foto == "" ? null : foto;
         }
-
     }
 }

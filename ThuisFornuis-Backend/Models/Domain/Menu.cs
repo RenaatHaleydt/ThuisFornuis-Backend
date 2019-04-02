@@ -16,7 +16,6 @@ namespace ThuisFornuis_Backend.Models
 
         public string Omschrijving { get; set; }
 
-
         public ICollection<MenuGerecht> MenuGerechten { get; private set; }
         public IEnumerable<Gerecht> Gerechten => MenuGerechten.Select(mg => mg.Gerecht);
 
@@ -79,6 +78,10 @@ namespace ThuisFornuis_Backend.Models
         #endregion
 
         #region Methods
+        public MenuGerecht GetMenuGerecht(int id) => MenuGerechten.SingleOrDefault(mg => mg.GerechtId == id);
+        public MenuSoep GetMenuSoep(int id) => MenuSoepen.SingleOrDefault(ms => ms.SoepId == id);
+        public MenuDessert GetMenuDessert(int id) => MenuDesserts.SingleOrDefault(md => md.DessertId == id);
+
         public void AddGerecht(Gerecht gerecht, DateTime datum) => MenuGerechten.Add(new MenuGerecht() { MenuId = Id, Menu = this, GerechtId = gerecht.Id, Gerecht = gerecht, Datum = datum });
         public Gerecht GetGerecht(int id) => MenuGerechten.SingleOrDefault(mg => mg.GerechtId == id).Gerecht;
         public void DeleteGerecht(Gerecht gerecht) => MenuGerechten.Remove(MenuGerechten.SingleOrDefault(mg => mg.GerechtId == gerecht.Id));

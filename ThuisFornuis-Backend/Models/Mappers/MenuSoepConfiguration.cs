@@ -8,7 +8,7 @@ namespace ThuisFornuis_Backend.Models.Mappers
     {
         public void Configure(EntityTypeBuilder<MenuSoep> builder)
         {
-            builder.HasKey(mg => new { mg.MenuId, mg.SoepId });
+            builder.HasKey(ms => new { ms.MenuId, ms.SoepId });
             builder.HasOne(ms => ms.Menu).WithMany(m => m.MenuSoepen).HasForeignKey(ms => ms.MenuId).IsRequired();
             builder.HasOne(ms => ms.Soep).WithMany().HasForeignKey(ms => ms.SoepId).IsRequired();
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using ThuisFornuis_Backend.DTOs;
 using ThuisFornuis_Backend.Models;
 
 namespace ThuisFornuis_Backend.Data.Repositories
@@ -20,7 +21,11 @@ namespace ThuisFornuis_Backend.Data.Repositories
         {
             return _menus
                     .Include(m => m.MenuGerechten)
-                    .ThenInclude(mg => mg.Gerecht)
+                        .ThenInclude(mg => mg.Gerecht)
+                    .Include(m => m.MenuSoepen)
+                        .ThenInclude(ms => ms.Soep)
+                    .Include(m => m.MenuDesserts)
+                        .ThenInclude(md => md.Dessert)
                     .OrderBy(m => m.Datum)
                     .ToList();
         }
@@ -29,16 +34,24 @@ namespace ThuisFornuis_Backend.Data.Repositories
         {
             return _menus
                     .Include(m => m.MenuGerechten)
-                    .ThenInclude(mg => mg.Gerecht)
-                    .SingleOrDefault(r => r.Id == id);
+                        .ThenInclude(mg => mg.Gerecht)
+                    .Include(m => m.MenuSoepen)
+                        .ThenInclude(ms => ms.Soep)
+                    .Include(m => m.MenuDesserts)
+                        .ThenInclude(md => md.Dessert)
+                    .SingleOrDefault(m => m.Id == id);
         }
 
         public bool TryGetMenu(int id, out Menu menu)
         {
             menu = _context.Menus
                     .Include(m => m.MenuGerechten)
-                    .ThenInclude(mg => mg.Gerecht)
-                    .FirstOrDefault(t => t.Id == id);
+                        .ThenInclude(mg => mg.Gerecht)
+                    .Include(m => m.MenuSoepen)
+                        .ThenInclude(ms => ms.Soep)
+                    .Include(m => m.MenuDesserts)
+                        .ThenInclude(md => md.Dessert)
+                    .FirstOrDefault(m => m.Id == id);
             return menu != null;
         }
 
@@ -49,13 +62,13 @@ namespace ThuisFornuis_Backend.Data.Repositories
 
         public void Update(Menu toUpdateMenu)
         {
-            //var menu = _menus.FirstOrDefault(m => m.Id == toUpdateMenu.Id);
+            var menu = _menus.FirstOrDefault(m => m.Id == toUpdateMenu.Id);
 
-            //if(menu != null) {
-            //    _context.Update(menu);
-            //}
+            if(menu != null) {
+                _context.Update(menu);
+            }
 
-            _context.Update(toUpdateMenu);
+            //_context.Update(toUpdateMenu);
         }
 
         public void Delete(Menu menu)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ThuisFornuis_Backend.DTOs;
 
 namespace ThuisFornuis_Backend.Models
 {
