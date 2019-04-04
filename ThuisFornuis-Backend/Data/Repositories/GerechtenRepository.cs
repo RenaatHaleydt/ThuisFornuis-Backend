@@ -49,10 +49,8 @@ namespace ThuisFornuis_Backend.Data.Repositories
 
             if (gerecht != null)
             {
-                _context.Update(gerecht);
+                _context.Update(toUpdateGerecht);
             }
-
-            //_context.Update(toUpdateMenu);
         }
 
         public void Delete(Gerecht gerecht)

@@ -65,7 +65,7 @@ namespace ThuisFornuis_Backend.Data.Repositories
             var menu = _menus.FirstOrDefault(m => m.Id == toUpdateMenu.Id);
 
             if(menu != null) {
-                _context.Update(menu);
+                _context.Update(toUpdateMenu);
             }
 
             //_context.Update(toUpdateMenu);

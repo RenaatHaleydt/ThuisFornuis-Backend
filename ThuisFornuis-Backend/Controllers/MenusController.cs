@@ -16,11 +16,15 @@ namespace ThuisFornuis_Backend.Controllers
     {
         private readonly IMenusRepository _menusRepository;
         private readonly IGerechtenRepository _gerechtenRepository;
+        private readonly ISoepenRepository _soepenRepository;
+        private readonly IDessertsRepository _dessertsRepository;
 
-        public MenusController(IMenusRepository menusRepository, IGerechtenRepository gerechtenRepository)
+        public MenusController(IMenusRepository menusRepository, IGerechtenRepository gerechtenRepository, ISoepenRepository soepenRepository, IDessertsRepository dessertsRepository)
         {
             _menusRepository = menusRepository;
             _gerechtenRepository = gerechtenRepository;
+            _soepenRepository = soepenRepository;
+            _dessertsRepository = dessertsRepository;
         }
 
         //----------------------------Menus----------------------------
@@ -66,16 +70,13 @@ namespace ThuisFornuis_Backend.Controllers
             return CreatedAtAction(nameof(GetMenu), new { id = menuToCreate.Id }, MenuDTO.MapMenu(menuToCreate));
         }
 
-        //TODO: nakijken!
-        //Ik kan MenuDTO niet converten naar Menu, vanwege de MenuGerechten, MenuSoepen en MenuDesserts
         [HttpPut("{id}")]
         public ActionResult<MenuDTO> PutMenu(int id, MenuDTO menuDTO)
         {
-            if (id != menuDTO.Id)
+            if (!_menusRepository.TryGetMenu(id, out var menu))
             {
-                return BadRequest();
+                return NotFound();
             }
-            _menusRepository.TryGetMenu(menuDTO.Id, out var menu);
             menu.Omschrijving = menuDTO.Omschrijving;
             menu.Datum = menuDTO.Datum;
             _menusRepository.Update(menu);
@@ -150,6 +151,110 @@ namespace ThuisFornuis_Backend.Controllers
             return returnType;
         }
 
-        //TODO: Soepen en Desserts toevoegen!
+        //----------------------------Soepen----------------------------
+        [HttpGet("{id}/soepen")]
+        public IEnumerable<SoepDTO> GetSoepen(int id)
+        {
+            if (!_menusRepository.TryGetMenu(id, out var menu))
+            {
+                return new List<SoepDTO>();
+                //return NotFound();
+            }
+            return menu.MenuSoepen.Select(ms => SoepDTO.MapSoep(ms)).OrderBy(s => s.Naam);
+        }
+
+        [HttpGet("{id}/soepen/{soepId}")]
+        public ActionResult<SoepDTO> GetSoep(int id, int soepId)
+        {
+            if (!_menusRepository.TryGetMenu(id, out var menu))
+                return NotFound();
+            MenuSoep menuSoep = menu.GetMenuSoep(soepId);
+            if (menuSoep == null)
+                return NotFound();
+            return SoepDTO.MapSoep(menuSoep);
+        }
+
+        [HttpPost("{id}/soepen/{soepId}")]
+        public ActionResult<SoepDTO> PostSoep(int id, int soepId)
+        {
+            if (!_menusRepository.TryGetMenu(id, out var menu))
+            {
+                return NotFound();
+            }
+            _soepenRepository.TryGetSoep(soepId, out var soep);
+            //var soepToCreate = new Soep(soep.Naam, soep.Prijs, soep.Hoeveelheid, soep.Omschrijving, soep.Foto);
+            menu.AddSoep(soep, DateTime.Now);
+            _menusRepository.SaveChanges();
+            return CreatedAtAction("GetSoep", new { id = menu.Id, soepId = soep.Id }, SoepDTO.MapSoep(menu.GetMenuSoep(soep.Id)));
+        }
+
+        [HttpDelete("{id}/soepen/{soepId}")]
+        public ActionResult<SoepDTO> DeleteSoep(int id, int soepId)
+        {
+            Menu menu = _menusRepository.GetBy(id);
+            if (menu == null)
+                return NotFound();
+            Soep soep = menu.GetSoep(soepId);
+            if (soep == null)
+                return NotFound();
+
+            var returnType = SoepDTO.MapSoep(menu.GetMenuSoep(soepId));
+            menu.DeleteSoep(soep);
+            _menusRepository.SaveChanges();
+            return returnType;
+        }
+
+        //----------------------------Desserts----------------------------
+        [HttpGet("{id}/desserts")]
+        public IEnumerable<DessertDTO> GetDesserts(int id)
+        {
+            if (!_menusRepository.TryGetMenu(id, out var menu))
+            {
+                return new List<DessertDTO>();
+                //return NotFound();
+            }
+            return menu.MenuDesserts.Select(md => DessertDTO.MapDessert(md)).OrderBy(d => d.Naam);
+        }
+
+        [HttpGet("{id}/desserts/{dessertId}")]
+        public ActionResult<DessertDTO> GetDessert(int id, int dessertId)
+        {
+            if (!_menusRepository.TryGetMenu(id, out var menu))
+                return NotFound();
+            MenuDessert menuDessert = menu.GetMenuDessert(dessertId);
+            if (menuDessert == null)
+                return NotFound();
+            return DessertDTO.MapDessert(menuDessert);
+        }
+
+        [HttpPost("{id}/desserts/{dessertId}")]
+        public ActionResult<DessertDTO> PostDessert(int id, int dessertId)
+        {
+            if (!_menusRepository.TryGetMenu(id, out var menu))
+            {
+                return NotFound();
+            }
+            _dessertsRepository.TryGetDessert(dessertId, out var dessert);
+            //var dessertToCreate = new Dessert(dessert.Naam, dessert.Prijs, dessert.Hoeveelheid, dessert.Omschrijving, dessert.Foto);
+            menu.AddDessert(dessert, DateTime.Now);
+            _menusRepository.SaveChanges();
+            return CreatedAtAction("GetDessert", new { id = menu.Id, dessertId = dessert.Id }, DessertDTO.MapDessert(menu.GetMenuDessert(dessert.Id)));
+        }
+
+        [HttpDelete("{id}/desserts/{dessertId}")]
+        public ActionResult<DessertDTO> DeleteDessert(int id, int dessertId)
+        {
+            Menu menu = _menusRepository.GetBy(id);
+            if (menu == null)
+                return NotFound();
+            Dessert dessert = menu.GetDessert(dessertId);
+            if (dessert == null)
+                return NotFound();
+
+            var returnType = DessertDTO.MapDessert(menu.GetMenuDessert(dessertId));
+            menu.DeleteDessert(dessert);
+            _menusRepository.SaveChanges();
+            return returnType;
+        }
     }
 }

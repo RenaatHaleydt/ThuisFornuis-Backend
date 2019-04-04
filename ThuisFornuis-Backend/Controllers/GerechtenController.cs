@@ -48,11 +48,16 @@ namespace ThuisFornuis_Backend.Controllers
         [HttpPut("{id}")]
         public ActionResult<Gerecht> PutGerecht(int id, Gerecht gerecht)
         {
-            if (id != gerecht.Id)
+            if (!_gerechtenRepository.TryGetGerecht(id, out var ger))
             {
-                return BadRequest();
+                return NotFound();
             }
-            _gerechtenRepository.Update(gerecht);
+            ger.Naam = gerecht.Naam;
+            ger.Omschrijving = gerecht.Omschrijving;
+            ger.Prijs = gerecht.Prijs;
+            ger.Foto = gerecht.Foto;
+            ger.Hoeveelheid = gerecht.Hoeveelheid;
+            _gerechtenRepository.Update(ger);
             _gerechtenRepository.SaveChanges();
             return NoContent();
         }

@@ -43,8 +43,8 @@ namespace ThuisFornuis_Backend
             services.AddScoped<ThuisFornuisDataInitializer>();
             services.AddScoped<IMenusRepository, MenuRepository>();
             services.AddScoped<IGerechtenRepository, GerechtenRepository>();
-            //services.AddScoped<ISoepenRepository, SoepenRepository>();
-            //services.AddScoped<IDessertsRepository, DessertsRepository>();
+            services.AddScoped<ISoepenRepository, SoepenRepository>();
+            services.AddScoped<IDessertsRepository, DessertsRepository>();
 
             services.AddOpenApiDocument(c =>
             {
