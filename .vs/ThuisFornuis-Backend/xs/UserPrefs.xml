@@ -1,29 +1,16 @@
 ﻿<Properties StartupConfiguration="{B3F36BE3-CB1D-4337-B3A3-0F2363E2D3F1}|Default">
   <MonoDevelop.Ide.ItemProperties.ThuisFornuis-Backend PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ThuisFornuis-Backend" expanded="True">
-            <Node name="ThuisFornuis-Backend" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True">
-                <Node name="Repositories" expanded="True" />
-              </Node>
-              <Node name="DTOs" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Domain" expanded="True">
-                  <Node name="IRepositories" expanded="True" />
-                  <Node name="MenuGerecht.cs" selected="True" />
-                </Node>
-                <Node name="Mappers" expanded="True" />
-              </Node>
-              <Node name="Properties" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThuisFornuis-Backend/Startup.cs">
+    <Files>
+      <File FileName="ThuisFornuis-Backend/Startup.cs" Line="10" Column="14" />
+      <File FileName="ThuisFornuis-Backend/Controllers/AccountController.cs" Line="80" Column="64" />
+      <File FileName="ThuisFornuis-Backend/Controllers/DessertsController.cs" Line="17" Column="10" />
+      <File FileName="ThuisFornuis-Backend/DTOs/RegisterDTO.cs" Line="22" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="1" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisDataInitializer.cs" Line="17" Column="40" />
+      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="3" Column="103" />
+      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisContext.cs" Line="1" Column="1" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

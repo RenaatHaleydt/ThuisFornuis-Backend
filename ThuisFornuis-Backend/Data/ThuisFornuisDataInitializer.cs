@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using ThuisFornuis_Backend.Models;
 
 namespace ThuisFornuis_Backend.Data
@@ -7,13 +9,15 @@ namespace ThuisFornuis_Backend.Data
     public class ThuisFornuisDataInitializer
     {
         private readonly ThuisFornuisContext _dbContext;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ThuisFornuisDataInitializer(ThuisFornuisContext dbContext)
+        public ThuisFornuisDataInitializer(ThuisFornuisContext dbContext, UserManager<IdentityUser> userManager)
         {
             _dbContext = dbContext;
+            _userManager = userManager;
         }
 
-        public void InitializeData()
+        public async Task InitializeData()
         {
             _dbContext.Database.EnsureDeleted();
             if (_dbContext.Database.EnsureCreated())
@@ -35,8 +39,17 @@ namespace ThuisFornuis_Backend.Data
                     tellerGerechten = tellerGerechten + 2;
                     tellerRest = tellerRest + 1;
                 }
+
+                await CreateUser("renaat.haleydt.y066@hogent.be", "P@ssword1234");
+
                 _dbContext.SaveChanges();
             }
+        }
+
+        private async Task CreateUser(string email, string password)
+        {
+            var user = new IdentityUser { UserName = email, Email = email };
+            await _userManager.CreateAsync(user, password);
         }
     }
 }

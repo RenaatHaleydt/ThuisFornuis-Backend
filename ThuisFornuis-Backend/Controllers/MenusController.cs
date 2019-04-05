@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace ThuisFornuis_Backend.Controllers
     [ApiConventionType(typeof(DefaultApiConventions))]
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     public class MenusController : ControllerBase
     {
@@ -29,12 +32,14 @@ namespace ThuisFornuis_Backend.Controllers
 
         //----------------------------Menus----------------------------
         [HttpGet]
+        [AllowAnonymous]
         public IEnumerable<MenuDTO> GetMenus()
         { 
             return _menusRepository.GetAll().Select(m => MenuDTO.MapMenu(m)).ToList();
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public ActionResult<MenuDTO> GetMenu(int id)
         {
             var menu = _menusRepository.GetBy(id);
@@ -100,6 +105,7 @@ namespace ThuisFornuis_Backend.Controllers
 
         //----------------------------Gerechten----------------------------
         [HttpGet("{id}/gerechten")]
+        [AllowAnonymous]
         public IEnumerable<GerechtDTO> GetGerechten(int id)
         {
             if(!_menusRepository.TryGetMenu(id, out var menu))
@@ -111,6 +117,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpGet("{id}/gerechten/{gerechtId}")]
+        [AllowAnonymous]
         public ActionResult<GerechtDTO> GetGerecht(int id, int gerechtId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -153,6 +160,7 @@ namespace ThuisFornuis_Backend.Controllers
 
         //----------------------------Soepen----------------------------
         [HttpGet("{id}/soepen")]
+        [AllowAnonymous]
         public IEnumerable<SoepDTO> GetSoepen(int id)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -164,6 +172,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpGet("{id}/soepen/{soepId}")]
+        [AllowAnonymous]
         public ActionResult<SoepDTO> GetSoep(int id, int soepId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -206,6 +215,7 @@ namespace ThuisFornuis_Backend.Controllers
 
         //----------------------------Desserts----------------------------
         [HttpGet("{id}/desserts")]
+        [AllowAnonymous]
         public IEnumerable<DessertDTO> GetDesserts(int id)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -217,6 +227,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpGet("{id}/desserts/{dessertId}")]
+        [AllowAnonymous]
         public ActionResult<DessertDTO> GetDessert(int id, int dessertId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
