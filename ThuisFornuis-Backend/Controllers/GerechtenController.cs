@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ThuisFornuis_Backend.Models;
 using ThuisFornuis_Backend.Models.Domain.IRepositories;
@@ -8,6 +10,7 @@ namespace ThuisFornuis_Backend.Controllers
     [ApiConventionType(typeof(DefaultApiConventions))]
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     public class GerechtenController : ControllerBase
     {
@@ -19,12 +22,14 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IEnumerable<Gerecht> Get()
         {
             return _gerechtenRepository.GetAll();
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public ActionResult<Gerecht> GetGerecht(int id)
         {
             var gerecht = _gerechtenRepository.GetBy(id);
@@ -36,6 +41,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult<Gerecht> PostGerecht(Gerecht gerecht)
         {
             Gerecht gerechtToCreate = new Gerecht(gerecht.Naam, gerecht.Prijs, gerecht.Hoeveelheid, gerecht.Omschrijving, gerecht.Foto);
@@ -46,6 +52,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
         
         [HttpPut("{id}")]
+        [AllowAnonymous]
         public ActionResult<Gerecht> PutGerecht(int id, Gerecht gerecht)
         {
             if (!_gerechtenRepository.TryGetGerecht(id, out var ger))
@@ -63,6 +70,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [AllowAnonymous]
         public ActionResult<Gerecht> DeleteGerecht(int id)
         {
             Gerecht gerecht = _gerechtenRepository.GetBy(id);

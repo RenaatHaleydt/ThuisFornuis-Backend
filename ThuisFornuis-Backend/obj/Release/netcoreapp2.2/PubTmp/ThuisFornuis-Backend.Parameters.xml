@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ThuisFornuis-Backnd" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^/Users/Renaat/Documents/GitHub/Repositories/Webapplicaties\ 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Release/netcoreapp2\.2/PubTmp/Out/$" />
+  </parameter>
+</parameters>

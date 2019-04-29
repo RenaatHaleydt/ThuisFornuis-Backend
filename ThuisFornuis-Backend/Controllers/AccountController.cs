@@ -55,6 +55,13 @@ namespace ThuisFornuis_Backend.Controllers
                 return BadRequest();
         }
 
+        [AllowAnonymous]
+        [HttpGet("checkusername")]
+        public async Task<ActionResult<Boolean>> CheckAvailableUserName(string email) {
+            var user = await _userManager.FindByNameAsync(email);
+            return user == null;
+        }
+
         private String GetToken(IdentityUser user)
         {
             // Create the token

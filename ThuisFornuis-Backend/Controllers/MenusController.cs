@@ -51,6 +51,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult<MenuDTO> PostMenu(MenuDTO menu)
         {
             Menu menuToCreate = new Menu(menu.Datum, menu.Omschrijving);
@@ -76,6 +77,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPut("{id}")]
+        [AllowAnonymous]
         public ActionResult<MenuDTO> PutMenu(int id, MenuDTO menuDTO)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -90,6 +92,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [AllowAnonymous]
         public ActionResult<MenuDTO> DeleteMenu(int id)
         {
             Menu menu = _menusRepository.GetBy(id);
@@ -129,6 +132,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost("{id}/gerechten/{gerechtId}")]
+        [AllowAnonymous]
         public ActionResult<GerechtDTO> PostGerecht(int id, int gerechtId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -143,6 +147,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}/gerechten/{gerechtId}")]
+        [AllowAnonymous]
         public ActionResult<GerechtDTO> DeleteGerecht(int id, int gerechtId)
         {
             Menu menu = _menusRepository.GetBy(id);
@@ -184,6 +189,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost("{id}/soepen/{soepId}")]
+        [AllowAnonymous]
         public ActionResult<SoepDTO> PostSoep(int id, int soepId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -198,6 +204,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}/soepen/{soepId}")]
+        [AllowAnonymous]
         public ActionResult<SoepDTO> DeleteSoep(int id, int soepId)
         {
             Menu menu = _menusRepository.GetBy(id);
@@ -239,6 +246,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost("{id}/desserts/{dessertId}")]
+        [AllowAnonymous]
         public ActionResult<DessertDTO> PostDessert(int id, int dessertId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -253,6 +261,7 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}/desserts/{dessertId}")]
+        [AllowAnonymous]
         public ActionResult<DessertDTO> DeleteDessert(int id, int dessertId)
         {
             Menu menu = _menusRepository.GetBy(id);
