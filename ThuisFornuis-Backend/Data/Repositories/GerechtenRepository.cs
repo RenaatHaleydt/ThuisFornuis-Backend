@@ -31,6 +31,19 @@ namespace ThuisFornuis_Backend.Data.Repositories
                     .SingleOrDefault(g => g.Id == id);
         }
 
+        public IEnumerable<Gerecht> GetBy(string naam = null, string omschrijving = null)
+        {
+            var gerechten = _gerechten.AsQueryable();
+            if (!string.IsNullOrEmpty(naam))
+                gerechten = gerechten.Where(g => g.Naam.IndexOf(naam, System.StringComparison.OrdinalIgnoreCase) >= 0);
+            if (!string.IsNullOrEmpty(omschrijving))
+                gerechten = gerechten.Where(g => g.Omschrijving!= null && g.Omschrijving.Equals(omschrijving, System.StringComparison.OrdinalIgnoreCase));
+
+            return gerechten
+                        .OrderBy(g => g.Naam)
+                        .ToList();
+        }
+
         public bool TryGetGerecht(int id, out Gerecht gerecht)
         {
             gerecht = _context.Gerechten

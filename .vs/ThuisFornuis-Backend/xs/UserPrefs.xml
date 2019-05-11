@@ -4,16 +4,20 @@
     <Files>
       <File FileName="ThuisFornuis-Backend/DTOs/GerechtDTO.cs" Line="1" Column="1" />
       <File FileName="ThuisFornuis-Backend/DTOs/MenuDTO.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="3" Column="104" />
+      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="12" Column="1" />
       <File FileName="ThuisFornuis-Backend/appsettings.Development.json" Line="1" Column="1" />
       <File FileName="ThuisFornuis-Backend/Program.cs" Line="1" Column="1" />
       <File FileName="ThuisFornuis-Backend/Startup.cs" Line="47" Column="46" />
       <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisDataInitializer.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="47" Column="14" />
-      <File FileName="ThuisFornuis-Backend/Controllers/GerechtenController.cs" Line="29" Column="10" />
+      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="145" Column="38" />
       <File FileName="ThuisFornuis-Backend/Controllers/AccountController.cs" Line="58" Column="9" />
       <File FileName="ThuisFornuis-Backend/DTOs/LoginDTO.cs" Line="1" Column="1" />
       <File FileName="ThuisFornuis-Backend/Controllers/DessertsController.cs" Line="1" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Models/Domain/Gerecht.cs" Line="1" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Controllers/GerechtenController.cs" Line="53" Column="106" />
+      <File FileName="ThuisFornuis-Backend/Models/Domain/IRepositories/IGerechtenRepository.cs" Line="9" Column="70" />
+      <File FileName="ThuisFornuis-Backend/Data/Repositories/GerechtenRepository.cs" Line="44" Column="25" />
+      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,8 +27,14 @@
               <Node name="Controllers" expanded="True">
                 <Node name="GerechtenController.cs" selected="True" />
               </Node>
-              <Node name="Data" expanded="True" />
-              <Node name="DTOs" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="Repositories" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="Domain" expanded="True">
+                  <Node name="IRepositories" expanded="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

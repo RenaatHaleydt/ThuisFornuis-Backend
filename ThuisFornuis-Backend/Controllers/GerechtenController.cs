@@ -23,9 +23,11 @@ namespace ThuisFornuis_Backend.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Gerecht> Get()
+        public IEnumerable<Gerecht> Get(string naam = null, string omschrijving = null)
         {
-            return _gerechtenRepository.GetAll();
+            if (string.IsNullOrEmpty(naam) && string.IsNullOrEmpty(omschrijving))
+                return _gerechtenRepository.GetAll();
+            return _gerechtenRepository.GetBy(naam, omschrijving);
         }
 
         [HttpGet("{id}")]
