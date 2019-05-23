@@ -3,7 +3,6 @@
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.runtimeconfig.dev.json
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.dll
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.pdb
-/Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.csprojAssemblyReference.cache
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.csproj.CoreCompileInputs.cache
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.RazorAssemblyInfo.cache
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.RazorAssemblyInfo.cs
@@ -12,17 +11,32 @@
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.RazorTargetAssemblyInfo.cache
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.dll
 /Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.pdb
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.deps.json
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.runtimeconfig.json
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.runtimeconfig.dev.json
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.dll
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/bin/Debug/netcoreapp2.2/ThuisFornuis-Backend.pdb
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.csprojAssemblyReference.cache
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.csproj.CoreCompileInputs.cache
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.RazorAssemblyInfo.cache
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.RazorAssemblyInfo.cs
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.AssemblyInfoInputs.cache
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.AssemblyInfo.cs
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.RazorTargetAssemblyInfo.cache
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.dll
-//Mac/Home/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.pdb
+/Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Debug/netcoreapp2.2/ThuisFornuis-Backend.csprojAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.deps.json
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.runtimeconfig.json
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.runtimeconfig.dev.json
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.dll
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.pdb
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.csprojAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.RazorAssemblyInfo.cache
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.RazorAssemblyInfo.cs
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.AssemblyInfoInputs.cache
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.AssemblyInfo.cs
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.RazorTargetAssemblyInfo.cache
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.dll
+\\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.pdb
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.deps.json
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.runtimeconfig.json
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.runtimeconfig.dev.json
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.dll
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Debug\netcoreapp2.2\ThuisFornuis-Backend.pdb
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.csprojAssemblyReference.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.csproj.CoreCompileInputs.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.RazorAssemblyInfo.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.RazorAssemblyInfo.cs
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.AssemblyInfoInputs.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.AssemblyInfo.cs
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.RazorTargetAssemblyInfo.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.dll
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Debug\netcoreapp2.2\ThuisFornuis-Backend.pdb

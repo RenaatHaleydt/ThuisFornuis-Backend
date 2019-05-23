@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="/Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/obj/Release/netcoreapp2.2/PubTmp/Out/" />
+  <IisApp path="C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\PubTmp\EFSQLScripts\ThuisFornuis_Backend.Data.ThuisFornuisContext.sql" />
 </sitemanifest>

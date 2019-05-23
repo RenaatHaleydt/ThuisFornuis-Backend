@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ThuisFornuis_Backend.Models;
 using ThuisFornuis_Backend.Models.Domain.IRepositories;
@@ -8,6 +10,7 @@ namespace ThuisFornuis_Backend.Controllers
     [ApiConventionType(typeof(DefaultApiConventions))]
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     public class DessertsController : ControllerBase
     {
@@ -19,12 +22,14 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IEnumerable<Dessert> Get()
         {
             return _dessertsRepository.GetAll();
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public ActionResult<Dessert> GetDessert(int id)
         {
             var dessert = _dessertsRepository.GetBy(id);

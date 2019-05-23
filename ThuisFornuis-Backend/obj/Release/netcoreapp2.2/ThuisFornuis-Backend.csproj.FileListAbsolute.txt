@@ -12,3 +12,17 @@
 \\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.RazorTargetAssemblyInfo.cache
 \\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.dll
 \\Mac\Home\Documents\GitHub\Repositories\Webapplicaties 4\ThuisFornuis-Backend\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.pdb
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Release\netcoreapp2.2\ThuisFornuis-Backend.deps.json
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Release\netcoreapp2.2\ThuisFornuis-Backend.runtimeconfig.json
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Release\netcoreapp2.2\ThuisFornuis-Backend.runtimeconfig.dev.json
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Release\netcoreapp2.2\ThuisFornuis-Backend.dll
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\bin\Release\netcoreapp2.2\ThuisFornuis-Backend.pdb
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.csprojAssemblyReference.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.csproj.CoreCompileInputs.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.RazorAssemblyInfo.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.RazorAssemblyInfo.cs
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.AssemblyInfoInputs.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.AssemblyInfo.cs
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.RazorTargetAssemblyInfo.cache
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.dll
+C:\Users\Renaat\Documents\Development\ThuisFornuis-Backend\ThuisFornuis-Backend\obj\Release\netcoreapp2.2\ThuisFornuis-Backend.pdb

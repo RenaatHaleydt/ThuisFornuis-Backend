@@ -51,24 +51,23 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public ActionResult<MenuDTO> PostMenu(MenuDTO menu)
         {
             Menu menuToCreate = new Menu(menu.Datum, menu.Omschrijving);
             if (menu.Gerechten != null)
             {
                 foreach (var gerecht in menu.Gerechten)
-                    menuToCreate.AddGerecht(new Gerecht(gerecht.Naam, gerecht.Prijs, gerecht.Hoeveelheid, gerecht.Omschrijving, gerecht.Foto), DateTime.Now);
+                    menuToCreate.AddGerecht(_gerechtenRepository.GetBy(gerecht.Id), DateTime.Now);
             }
             if (menu.Soepen != null)
             {
                 foreach (var soep in menu.Soepen)
-                    menuToCreate.AddSoep(new Soep(soep.Naam, soep.Prijs, soep.Hoeveelheid, soep.Omschrijving, soep.Foto), DateTime.Now);
+                    menuToCreate.AddSoep(_soepenRepository.GetBy(soep.Id), DateTime.Now);
             }
             if(menu.Desserts != null)
             {
                 foreach (var dessert in menu.Desserts)
-                    menuToCreate.AddDessert(new Dessert(dessert.Naam, dessert.Prijs, dessert.Hoeveelheid, dessert.Omschrijving, dessert.Foto), DateTime.Now);
+                    menuToCreate.AddDessert(_dessertsRepository.GetBy(dessert.Id), DateTime.Now);
             }
             _menusRepository.Add(menuToCreate);
             _menusRepository.SaveChanges();
@@ -77,7 +76,6 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPut("{id}")]
-        [AllowAnonymous]
         public ActionResult<MenuDTO> PutMenu(int id, MenuDTO menuDTO)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -88,11 +86,10 @@ namespace ThuisFornuis_Backend.Controllers
             menu.Datum = menuDTO.Datum;
             _menusRepository.Update(menu);
             _menusRepository.SaveChanges();
-            return NoContent();
+            return CreatedAtAction(nameof(GetMenu), new { id = menu.Id }, MenuDTO.MapMenu(menu));
         }
 
         [HttpDelete("{id}")]
-        [AllowAnonymous]
         public ActionResult<MenuDTO> DeleteMenu(int id)
         {
             Menu menu = _menusRepository.GetBy(id);
@@ -132,7 +129,6 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost("{id}/gerechten/{gerechtId}")]
-        [AllowAnonymous]
         public ActionResult<GerechtDTO> PostGerecht(int id, int gerechtId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -147,7 +143,6 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}/gerechten/{gerechtId}")]
-        [AllowAnonymous]
         public ActionResult<GerechtDTO> DeleteGerecht(int id, int gerechtId)
         {
             Menu menu = _menusRepository.GetBy(id);
@@ -189,7 +184,6 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost("{id}/soepen/{soepId}")]
-        [AllowAnonymous]
         public ActionResult<SoepDTO> PostSoep(int id, int soepId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -204,7 +198,6 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}/soepen/{soepId}")]
-        [AllowAnonymous]
         public ActionResult<SoepDTO> DeleteSoep(int id, int soepId)
         {
             Menu menu = _menusRepository.GetBy(id);
@@ -246,7 +239,6 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpPost("{id}/desserts/{dessertId}")]
-        [AllowAnonymous]
         public ActionResult<DessertDTO> PostDessert(int id, int dessertId)
         {
             if (!_menusRepository.TryGetMenu(id, out var menu))
@@ -261,7 +253,6 @@ namespace ThuisFornuis_Backend.Controllers
         }
 
         [HttpDelete("{id}/desserts/{dessertId}")]
-        [AllowAnonymous]
         public ActionResult<DessertDTO> DeleteDessert(int id, int dessertId)
         {
             Menu menu = _menusRepository.GetBy(id);

@@ -8,6 +8,7 @@ namespace ThuisFornuis_Backend.Data
 {
     public class ThuisFornuisContext : IdentityDbContext
     {
+        
         public ThuisFornuisContext(DbContextOptions<ThuisFornuisContext> options)
             : base(options)
         {
@@ -57,6 +58,7 @@ namespace ThuisFornuis_Backend.Data
             );
         }
 
+        
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Gerecht> Gerechten { get; set; }
         public DbSet<Soep> Soepen { get; set; }

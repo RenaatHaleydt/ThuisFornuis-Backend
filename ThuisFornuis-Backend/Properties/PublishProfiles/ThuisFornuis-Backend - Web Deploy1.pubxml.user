@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/TDHj5JBAkGBNvr6k3f23gAAAAACAAAAAAAQZgAAAAEAACAAAAAXuSRk6K+NMBE1CnmN+aTcrvNLiBj56701QcNXkIDQ/wAAAAAOgAAAAAIAACAAAADYy5o4/BYShTig7JKB9BmLxPskpxW4+A1zShLH9IN9c4AAAACft05X1wMsIhKi1t4MMBjokZ4NnQ2g8jPRuug+0qmmz9Go3j7ZdcZdGJf97HKTxlNYCqm5bvtC4BpryHXr7DTpvsw5aDVCLiyGk8XyK8Cm4iHQC/MRbkM4WvQBH3Bk3k6pjDZEYkahqk0/3J4A+4wB25Sai6wlgZdT6Ul5viZ/jkAAAABcNMCrRg3N5vEAkKE3U5hzmnHOlAgAsQ2y9bUp+9Y/uVn7gX8b3AjgangTkN2HsXYUl5/JgfjCVyPohlm72Ala</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ThuisFornuisContext">
+      <Value>Data Source=tcp:thuisfornuis-backend-dbserver.database.windows.net,1433%3bInitial Catalog=ThuisFornuis-Backend-Database%3bUser Id=Renaat%40thuisfornuis-backend-dbserver%3bPassword=iKkAn%29567%28kEerlEkkerkOken</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="ThuisFornuis_Backend.Data.ThuisFornuisContext">
+      <Value>Data Source=tcp:thuisfornuis-backend-dbserver.database.windows.net,1433%3bInitial Catalog=ThuisFornuis-Backend-Database%3bUser Id=Renaat%40thuisfornuis-backend-dbserver%3bPassword=iKkAn%29567%28kEerlEkkerkOken</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

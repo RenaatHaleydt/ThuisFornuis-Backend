@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ThuisFornuis_Backend.Models.Domain.IRepositories
-{
-    public interface IGerechtenRepository
-    {
+namespace ThuisFornuis_Backend.Models.Domain.IRepositories {
+    public interface IGerechtenRepository {
         Gerecht GetBy(int id);
         IEnumerable<Gerecht> GetBy(string naam, string omschrijving);
+        IEnumerable<Gerecht> ExcludeFromMenu(int menuId);
         bool TryGetGerecht(int id, out Gerecht gerecht);
         IEnumerable<Gerecht> GetAll();
         void Add(Gerecht soep);

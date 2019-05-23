@@ -47,14 +47,14 @@ namespace ThuisFornuis_Backend
                 c.Title = "ThuisFornuis API";
                 c.Version = "v1";
                 c.Description = "The ThuisFornuis API documentation description.";
-                c.DocumentProcessors.Add(new SecurityDefinitionAppender("JWT Token", new SwaggerSecurityScheme
-                {
-                    Type = SwaggerSecuritySchemeType.ApiKey,
-                    Name = "Authorization",
-                    In = SwaggerSecurityApiKeyLocation.Header,
-                    Description = "Copy 'Bearer' + valid JWT token into field"
-                }));
-                c.OperationProcessors.Add(new OperationSecurityScopeProcessor("JWT Token"));
+                //c.DocumentProcessors.Add(new SecurityDefinitionAppender("JWT Token", new SwaggerSecurityScheme
+                //{
+                //    Type = SwaggerSecuritySchemeType.ApiKey,
+                //    Name = "Authorization",
+                //    In = SwaggerSecurityApiKeyLocation.Header,
+                //    Description = "Copy 'Bearer' + valid JWT token into field"
+                //}));
+                //c.OperationProcessors.Add(new OperationSecurityScopeProcessor("JWT Token"));
             }); //for OpenAPI 3.0 else AddSwaggerDocument();
 
             //no UI will be added (<-> AddDefaultIdentity)
@@ -129,8 +129,9 @@ namespace ThuisFornuis_Backend
             app.UseSwaggerUi3();
             app.UseSwagger(); //in this sequence
 
-            //Remove initialiser for deployment
-            //menusDataInitializer.InitializeData().Wait();
+            // Remove initialiser for deployment
+            //Haal dit uit commentaar wanneer je de database opnieuw maakt! Nu zit de user er in, dus die moet niet opnieuw gemaakt worden.
+            // menusDataInitializer.InitializeData().Wait();
             
         }
     }

@@ -2,22 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.ThuisFornuis-Backend PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ThuisFornuis-Backend/Controllers/GerechtenController.cs">
     <Files>
-      <File FileName="ThuisFornuis-Backend/DTOs/GerechtDTO.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/DTOs/MenuDTO.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="12" Column="1" />
-      <File FileName="ThuisFornuis-Backend/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Program.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Startup.cs" Line="47" Column="46" />
-      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisDataInitializer.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="145" Column="38" />
-      <File FileName="ThuisFornuis-Backend/Controllers/AccountController.cs" Line="58" Column="9" />
-      <File FileName="ThuisFornuis-Backend/DTOs/LoginDTO.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Controllers/DessertsController.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Models/Domain/Gerecht.cs" Line="1" Column="1" />
-      <File FileName="ThuisFornuis-Backend/Controllers/GerechtenController.cs" Line="53" Column="106" />
-      <File FileName="ThuisFornuis-Backend/Models/Domain/IRepositories/IGerechtenRepository.cs" Line="9" Column="70" />
-      <File FileName="ThuisFornuis-Backend/Data/Repositories/GerechtenRepository.cs" Line="44" Column="25" />
-      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisContext.cs" Line="1" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Controllers/GerechtenController.cs" Line="52" Column="10" />
+      <File FileName="ThuisFornuis-Backend/Startup.cs" Line="59" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Models/Domain/IRepositories/IGerechtenRepository.cs" Line="20" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Data/Repositories/GerechtenRepository.cs" Line="108" Column="1" />
+      <File FileName="ThuisFornuis-Backend/Data/ThuisFornuisContext.cs" Line="9" Column="18" />
+      <File FileName="ThuisFornuis-Backend/Data/Repositories/MenusRepository.cs" Line="42" Column="55" />
+      <File FileName="ThuisFornuis-Backend/Program.cs" Line="21" Column="47" />
+      <File FileName="ThuisFornuis-Backend/appsettings.json" Line="6" Column="20" />
+      <File FileName="ThuisFornuis-Backend/Controllers/MenusController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -44,7 +37,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/Renaat/Documents/GitHub/Repositories/Webapplicaties 4/ThuisFornuis-Backend/ThuisFornuis-Backend/ThuisFornuis-Backend/Controllers/GerechtenController.cs" relfile="ThuisFornuis-Backend/Controllers/GerechtenController.cs" line="39" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
